@@ -1,5 +1,5 @@
 #!/bin/sh
-#Version 1.1.1
+#Version 1.1.3
 
 #This script works with http://www.heyu.org/ to control X10 units. X10s have an issue
 #where they sometimes don't register commands, either due to a large home, many electrical
@@ -28,11 +28,11 @@ if [ "$MODULE" = "A10" ]; then
 fi
 
 COUNTER=0
-while [ $COUNTER -lt 3 ]; do
+while [ $COUNTER -lt 5 ]; do
 	"$HEYU" "f""$ONOFF" "$MODULE"
 	sleep 10
 	let COUNTER=COUNTER+1
 done
 
 NOTIFY="$DISPLAY"" now ""$ONOFF"
-/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'X10 Module' -message "$NOTIFY" -appIcon /Applications/FileBot.app/Contents/Resources/terminal_icon.icns
+/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title 'X10 Module' -message "$NOTIFY" -appIcon ~/Scripts/GitHub/x10/x10.png
