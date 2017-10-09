@@ -1,5 +1,5 @@
-#!/bin/sh
-#Version 1.2.1
+#!/usr/bin/env bash
+#Version 1.2.2
 
 #This script works with http://www.heyu.org/ to control X10 units. X10s have an issue
 #where they sometimes don't register commands, either due to a large home, many electrical
@@ -31,7 +31,7 @@ COUNTER=0
 while [ $COUNTER -lt 6 ]; do
 	"$HEYU" "f""$ONOFF" "$MODULE"
 	sleep 10
-	let COUNTER=COUNTER+1
+	COUNTER=$((COUNTER+1))
 done
 
 NOTIFY="$DISPLAY"" now ""$ONOFF"
