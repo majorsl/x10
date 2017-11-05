@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Version 1.2.2
+#Version 1.2.3
 
 #This script works with http://www.heyu.org/ to control X10 units. X10s have an issue
 #where they sometimes don't register commands, either due to a large home, many electrical
@@ -35,4 +35,4 @@ while [ $COUNTER -lt 6 ]; do
 done
 
 NOTIFY="$DISPLAY"" now ""$ONOFF"
-/usr/local/bin/terminal-notifier -title 'X10 Module' -message "$NOTIFY" -appIcon ~/Scripts/GitHub/x10/x10.png -activate -sender com.apple.Terminal -timeout 10
+/usr/local/bin/terminal-notifier -title 'X10 Module' -message "$NOTIFY" -appIcon ~/Scripts/GitHub/x10/x10.png -timeout 10
